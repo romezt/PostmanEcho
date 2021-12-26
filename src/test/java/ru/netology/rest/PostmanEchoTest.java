@@ -5,9 +5,9 @@ import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.core.IsEqual.equalTo;
 
-class MobileBankApiTestV1 {
+class PostmanEchoTest {
  @Test
- void shouldReturnDemoAccounts() {
+ void shouldReturnSameData() {
   given()
           .baseUri("http://postman-echo.com")
           .body("some data")
@@ -15,7 +15,7 @@ class MobileBankApiTestV1 {
           .post("/post")
           .then()
           .statusCode(200)
-          .body("data", equalTo("some another data"))
+          .body("data", equalTo("some data"))
   ;
  }
 }
